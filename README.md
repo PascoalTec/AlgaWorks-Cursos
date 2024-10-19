@@ -1,15 +1,15 @@
-#### Ignição Spring Rest:
+## Ignição Spring Rest:
 CRUD = Cadastro , Consulta, Exclusão, Atualização (CREATE, READ, UPDATE, DELETE)
 
 EndPoints = Serviços para realizar operações CRUD
 
 
-#### Dependencias:
+## Dependencias:
 
 Starter Spring Web = Adiciona outras dependencias que é necessário para um projeto WEB funcionar
 
 
-#### Estrutura do Projeto:
+## Estrutura do Projeto:
 
 .mvn = Maven Wrapper, maven imbutido dentro do projeto para que não precise instalar o maven no computador
 
@@ -34,7 +34,7 @@ domain = Aonde vai ficar todos os códigos que vão estar sobre o nosso dominio
 domain/model = Aonde vao ficar as classes deste contexto (ex .: Proprietario)
 
 
-#### Arquivo do Maven:
+## Arquivo do Maven:
 pom.xml:
             POM = Project Object Model
 
@@ -43,7 +43,7 @@ arquivo xml, contem informações e configurações do projeto usados pelo maven
 como o projeto vai ser construido
 
 
-#### FATJAR:
+## FATJAR:
 
 Empacotamento de aplicações
 
@@ -51,21 +51,54 @@ Empacotamento de aplicações
 
 <!-- Anotações -->
 
-#### @RestController
+## @RestController
 
 Diz que a classe controller é um componente Spring propria para desenvolvimento de Rest APIs
 
 
-#### @GetMapping
+## @GetMapping
 
 Metodo para obter alguma representação de um recurso
 
 
 
-
-
 <!-- Collection Resource -->
 
-#### Collection Resource:
+## Collection Resource:
 
 Apenas para organizar as chamadas "requisições" feitas no PostMan 
+
+
+
+<!-- application.properties  -->
+
+## application.properties:
+
+Arquivo para fazer customizações de configurações do Projeto Spring Boot
+
+
+
+## spring.datasource.url:
+
+Espera uma URL de conexão de banco de dados
+
+
+ex.: jdbc:mysql://host1:33060/sakila
+
+jdbc:mysql nao muda, é padrao de conexão do MySql
+
+
+host1 é o endereço aonde o banco de dados será iniciado, caso a conexão seja local, terá que alterar para "localhost"
+
+ex.: jdbc:mysql://localhost:33060/sakila
+
+
+33060 é a porta do MySql, no meu caso para o meu MySql a porta é 3306 que é o padrão, se você não especificar, ele ja pega por padrão a 3306
+
+ex.: jdbc:mysql://localhost:3306/sakila  OU jdbc:mysql://localhost/sakila
+
+
+sakila é o nome do schema, grupamento aonde fica os elementos
+
+
+ex.: tabelas, views, procedures
