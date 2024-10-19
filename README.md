@@ -133,6 +133,8 @@ ex.: A classe Proprietario seria uma classe de persistência
 @Column - como as colunas já estão o mesmo nome, é opcional a inclusão desta anotação, quando a classe está anotada com a classe @Entity, elas já estão mapeadas usando o padrão, o nome da propriedade será o nome da coluna da tabela
 
 
+@EntityManager - é a interface do Jakarta Persistence que é usada para fazer as operações com as entidades que depois são refletidas no banco de dados, ele é um gerenciador de entidades
+
 Metodo Equals é o metodo que se usa para comparar objetos se o conteudo do objeto é igual a outro
 
 #### Podemos gerar o EqualsAndHashCode pela dependencia do Lombok, usando @EqualsAndHashCode
