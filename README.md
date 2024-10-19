@@ -102,3 +102,39 @@ sakila é o nome do schema, grupamento aonde fica os elementos
 
 
 ex.: tabelas, views, procedures
+
+
+## Manutenção do banco de dados
+
+db/migration
+
+Arquivo para migration do MySQL, para criação de tabelas do banco de dados
+
+##### IMPORTANTE!! NECESSÁRIO SER EXATAMENTE DESTA FORMA COM V001 QUE DITA O VERSIONAMENTO E DOIS __
+
+ex.: V001__cria-tabela-proprietario.sql
+
+
+
+## Jakarta Persistence (JPA)
+
+Uma especificação que fornece a API um mapeamento de objeto relacional
+
+@Entity() se não especificar o nome da tabela, por padrão o nome da classe vira o nome da tabela
+
+@Table(name = "tb_proprietario") indica que a classe Proprietario agora está vinculada a tabela "tb_proprietario" no modelo relacional
+
+ex.: A classe Proprietario seria uma classe de persistência
+
+@Id define a propriedade como a propriedade de identificação do objeto, ela será a chave primária
+
+@GeneratedValue(strategy = GenerationType.IDENTITY) define a estratégia de geração da chave para usar a forma nativa do banco de dados, por que ele está como auto incrementado
+
+@Column - como as colunas já estão o mesmo nome, é opcional a inclusão desta anotação, quando a classe está anotada com a classe @Entity, elas já estão mapeadas usando o padrão, o nome da propriedade será o nome da coluna da tabela
+
+
+Metodo Equals é o metodo que se usa para comparar objetos se o conteudo do objeto é igual a outro
+
+#### Podemos gerar o EqualsAndHashCode pela dependencia do Lombok, usando @EqualsAndHashCode
+
+@EqualsAndHashCode ele gera um equals e hashCode com base todas as prioridades, neste caso do projeto eu só quero o ID, você usa o (onlyExplicitlyIncluded = true), eu quero apenas as propriedades que eu incluir EXPLICITA
